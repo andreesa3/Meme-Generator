@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export default function Home() {
   /* Memes State */
@@ -22,7 +23,7 @@ export default function Home() {
       <div className="allMemes">
         {memes.map((meme) => (
           <div className="meme-box" key={meme.id}>
-            <img src={meme.url} alt={meme.name} className="meme-img" />
+            <LazyLoadImage src={meme.url} alt={meme.name} className="meme-img" />
             <button
               className="edit"
               onClick={(e) => navigate(`/edit?url=${meme.url}`)}
