@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Home() {
   /* Memes State */
@@ -7,7 +8,6 @@ export default function Home() {
 
   const navigate = useNavigate();
 
-  /* Eseguiamo lo shuffle dell'array prima di riportarlo nel body */
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
       .then((res) => res.json())
@@ -22,12 +22,11 @@ export default function Home() {
       <div className="allMemes">
         {memes.map((meme) => (
           <div className="meme-box" key={meme.id}>
-            <div
+            <LazyLoadImage
+              src={meme.url}
+              alt={meme.alt}
               className="meme-img"
-              style={{
-                background: `url(${meme.url}) no-repeat center center / cover`,
-              }}
-            ></div>
+            />
             <button
               className="edit"
               onClick={(e) => navigate(`/edit?url=${meme.url}`)}
