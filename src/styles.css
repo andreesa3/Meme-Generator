@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Utilities */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #4883bf;
+  width: 150px;
+}
+img {
+  max-width: 500px;
+  max-height: 500px;
+  margin: 50px auto 25px;
+  display: block;
+  box-shadow: 0 0 10px #1c211f;
+}
+input {
+  display: block;
+  padding: 10px;
+  width: 350px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+input:focus {
+  outline: none;
+}
+
+.edit-off {
+  display: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+nav,
+footer {
+  padding: 25px;
+  background-color: rgba(100, 135, 166, 0.6);
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.logo {
+  font-size: 24px;
+  color: #000;
+  font-weight: bold;
+}
+.icon {
+  height: 50px !important;
+  margin: 0;
+  box-shadow: none;
+}
+
+/* Container */
+.container {
+  padding: 20px 0;
+}
+.allMemes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.edit {
+  display: block;
+  margin: 40px auto;
+}
+
+/* Meme Box */
+.meme-img {
+  width: 400px;
+  height: 350px;
+}
+
+/* Edit */
+.meme-text-div {
+  margin: 0 auto;
+  max-width: 500px;
+  position: relative;
+}
+.advice {
+  text-align: center;
+  color: red;
+  padding: 10px;
+}
+.meme-text {
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 0 1px 0 #000, 1px 0 0 #000, 0 -1px 0 #000, -1px 0 0 #000,
+    1px 1px 0 #000;
+  cursor: text;
+  text-align: center;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.meme-text:active {
+  cursor: grabbing;
+}
+.react-draggable-transparent-selection {
+  touch-action: auto;
+  color: red;
+}
+.font-input {
+  max-width: 45px;
+  text-align: center;
+  margin: 0 auto;
+}
+.editButtons {
+  display: flex;
+  justify-content: center;
+  padding: 30px 50px;
+  gap: 10px;
+}
+
+/* Three Buttons */
+.delete {
+  background-color: #e44d3a;
+}
+.delete:active {
+  background-color: #ba4232;
+}
+.save {
+  background-color: #44cc00;
+}
+.save:active {
+  background-color: #43901c;
+}
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #1c211f;
+  color: #fff;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1270px) {
+  .allMemes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 850px) {
+  .meme-img {
+    max-width: 350px;
+    max-height: 350px;
+  }
+}
+@media screen and (max-width: 752px) {
+  button {
+    width: 120px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .allMemes {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 596px) {
+  nav {
+    padding: 10px 25px;
+  }
+  img:not(.icon, .meme-img) {
+    max-width: 320px;
+    max-height: 320px;
+  }
+}
+@media screen and (max-width: 360px) {
+  input {
+    width: 300px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+  img:not(.icon, .meme-img) {
+    width: 250px;
+    height: 250px;
+  }
+  .meme-img {
+    max-width: 280px;
+    max-height: 280px;
+  }
+  .editButtons {
+    display: grid;
+    grid-template-columns: repeat(2, 120px);
+  }
+}
+
+@media screen and (max-width: 290px) {
+  input {
+    width: 250px;
+  }
+  .meme-img {
+    max-width: 240px;
+    max-height: 240px;
+  }
+}
